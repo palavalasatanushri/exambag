@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './Layout';
 import Aggregator from './screens/Aggregator';
 import Personals from './screens/Personals';
@@ -48,9 +48,9 @@ class ErrorBoundary extends React.Component {
 const ProtectedRoute = ({ children }) => {
   const { session, loading } = useAppContext();
   if (loading) return (
-    <div className="h-screen w-full flex flex-col items-center justify-center gap-4 animate-pulse" style={{background: '#EDF4F0'}}>
-      <div className="w-16 h-16 rounded-full border-4 animate-spin" style={{borderColor: 'rgba(107,168,152,0.2)', borderTopColor: '#6BA898'}} />
-      <p className="font-bold tracking-widest text-sm uppercase" style={{color: '#6BA898'}}>Loading Maxe</p>
+    <div className="h-screen w-full flex flex-col items-center justify-center gap-4 animate-pulse" style={{background: '#FAF5FF'}}>
+      <div className="w-16 h-16 rounded-full border-4 animate-spin" style={{borderColor: 'rgba(192,38,211,0.2)', borderTopColor: '#C026D3'}} />
+      <p className="font-bold tracking-widest text-sm uppercase" style={{color: '#C026D3'}}>Loading Exambag</p>
     </div>
   );
   if (!session) return <Navigate to="/auth" />;
@@ -76,9 +76,9 @@ function App() {
   return (
     <ErrorBoundary>
       <AppProvider>
-        <BrowserRouter>
+        <HashRouter>
           <AppRoutes />
-        </BrowserRouter>
+        </HashRouter>
       </AppProvider>
     </ErrorBoundary>
   );

@@ -15,7 +15,7 @@ export default function UserSearch() {
   const [selectedUser, setSelectedUser] = useState(null); // For Popup
 
   useEffect(() => {
-    const saved = localStorage.getItem('maxe_recent_searches');
+    const saved = localStorage.getItem('Exambag_recent_searches');
     if (saved) setRecentSearches(JSON.parse(saved));
   }, []);
 
@@ -29,7 +29,7 @@ export default function UserSearch() {
         return true;
       });
       const updated = [item, ...filtered].slice(0, 10);
-      localStorage.setItem('maxe_recent_searches', JSON.stringify(updated));
+      localStorage.setItem('Exambag_recent_searches', JSON.stringify(updated));
       return updated;
     });
   };
@@ -41,14 +41,14 @@ export default function UserSearch() {
         if (typeof identifier === 'string') return u !== identifier;
         return u.id !== identifier;
       });
-      localStorage.setItem('maxe_recent_searches', JSON.stringify(updated));
+      localStorage.setItem('Exambag_recent_searches', JSON.stringify(updated));
       return updated;
     });
   };
 
   const clearRecentSearches = () => {
     setRecentSearches([]);
-    localStorage.removeItem('maxe_recent_searches');
+    localStorage.removeItem('Exambag_recent_searches');
   };
 
   const openUserPopup = (user) => {

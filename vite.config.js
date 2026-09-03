@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
+  base: './',
   plugins: [
     react(),
     VitePWA({
@@ -17,8 +18,8 @@ export default defineConfig({
       },
       manifest: {
         id: '/',
-        name: 'Maxe - Study Hub',
-        short_name: 'Maxe',
+        name: 'Exambag - Study Hub',
+        short_name: 'Exambag',
         description: 'Your college study hub for PDFs, Notes, Question Papers, AI Chats, Communities and more.',
         theme_color: '#2D4A3E',
         background_color: '#EDF4F0',
@@ -59,34 +60,34 @@ export default defineConfig({
         ],
         protocol_handlers: [
           {
-            protocol: 'web+maxe',
+            protocol: 'web+Exambag',
             url: '/?protocol=%s'
           }
         ],
         related_applications: [
           {
             platform: 'play',
-            url: 'https://play.google.com/store/apps/details?id=com.maxe.studyhub',
-            id: 'com.maxe.studyhub'
+            url: 'https://play.google.com/store/apps/details?id=com.Exambag.studyhub',
+            id: 'com.Exambag.studyhub'
           }
         ],
         edge_side_panel: {
           preferred_width: 400
         },
         scope_extensions: [
-          { origin: 'https://rohit6758-maxe-n51bhadsj-rohit6758s-projects.vercel.app' }
+          { origin: 'https://rohit6758-Exambag-n51bhadsj-rohit6758s-projects.vercel.app' }
         ],
         widgets: [
           {
-            name: 'Maxe Study Widget',
-            short_name: 'Maxe',
+            name: 'Exambag Study Widget',
+            short_name: 'Exambag',
             description: 'Quick access to your study resources',
-            tag: 'maxe-widget',
-            template: 'maxe-widget',
-            ms_ac_template: 'widget/maxe-widget.json',
+            tag: 'Exambag-widget',
+            template: 'Exambag-widget',
+            ms_ac_template: 'widget/Exambag-widget.json',
             data: '/',
             type: 'application/json',
-            screenshots: [{ src: 'screenshot1.png', sizes: '512x512', label: 'Maxe widget' }],
+            screenshots: [{ src: 'screenshot1.png', sizes: '512x512', label: 'Exambag widget' }],
             icons: [{ src: 'icon-128x128.png', sizes: '128x128' }]
           }
         ],
@@ -108,14 +109,14 @@ export default defineConfig({
             sizes: '512x512',
             type: 'image/png',
             form_factor: 'narrow',
-            label: 'Maxe Study Hub Home Screen'
+            label: 'Exambag Study Hub Home Screen'
           },
           {
             src: 'screenshot-wide.png',
             sizes: '1024x512',
             type: 'image/png',
             form_factor: 'wide',
-            label: 'Maxe Study Hub Desktop View'
+            label: 'Exambag Study Hub Desktop View'
           }
         ],
         shortcuts: [

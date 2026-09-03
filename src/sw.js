@@ -23,7 +23,7 @@ registerRoute(
   new CacheFirst({
     cacheName: 'supabase-storage-v1',
     plugins: [
-      new ExpirationPlugin({ maxEntries: 200, maxAgeSeconds: 60 * 60 * 24 * 30 }),
+      new ExpirationPlugin({ Exambagntries: 200, maxAgeSeconds: 60 * 60 * 24 * 30 }),
       new CacheableResponsePlugin({ statuses: [0, 200] }),
     ],
   })
@@ -40,7 +40,7 @@ registerRoute(
     cacheName: 'supabase-api-v1',
     networkTimeoutSeconds: 5,
     plugins: [
-      new ExpirationPlugin({ maxEntries: 100, maxAgeSeconds: 60 * 60 * 24 }),
+      new ExpirationPlugin({ Exambagntries: 100, maxAgeSeconds: 60 * 60 * 24 }),
       new CacheableResponsePlugin({ statuses: [0, 200] }),
       bgSyncPlugin,
     ],
@@ -68,7 +68,7 @@ self.addEventListener('periodicsync', event => {
 // ── Push Notifications ─────────────────────────────────────────────────────
 self.addEventListener('push', event => {
   const data = event.data ? event.data.json() : {};
-  const title = data.title || 'Maxe - Study Hub';
+  const title = data.title || 'Exambag - Study Hub';
   const options = {
     body: data.body || 'You have a new notification',
     icon: '/icon-192x192.png',

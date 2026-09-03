@@ -53,7 +53,7 @@ export default function Layout() {
         const notified = localStorage.getItem('notified_' + today);
         if (!notified) {
           data.forEach(ev => {
-            new Notification('Maxe Reminder 📅', {
+            new Notification('Exambag Reminder 📅', {
               body: `You have an event today: ${ev.title}`,
               icon: '/logo.png'
             });
@@ -90,8 +90,8 @@ export default function Layout() {
   const SidebarContent = () => (
     <div className="flex flex-col h-full">
       {/* Brand */}
-      <div className="p-6 pb-4 border-b border-sage-100" style={{borderColor: 'rgba(107,168,152,0.15)'}}>
-        <h1 className="text-xl font-bold text-aberration" style={{color: '#2D4A3E'}}>Maxe</h1>
+      <div className="p-6 pb-4 border-b border-sage-100" style={{borderColor: 'rgba(192,38,211,0.15)'}}>
+        <h1 className="text-xl font-bold text-aberration" style={{color: '#4A044E'}}>Exambag</h1>
         {activeBranch && (
           <span className="text-xs font-semibold mt-1 inline-block tag">{activeBranch}</span>
         )}
@@ -116,9 +116,9 @@ export default function Layout() {
       </nav>
 
       {/* Bottom actions */}
-      <div className="p-4 space-y-1 border-t mt-auto" style={{borderColor: 'rgba(107,168,152,0.15)'}}>
+      <div className="p-4 space-y-1 border-t mt-auto" style={{borderColor: 'rgba(192,38,211,0.15)'}}>
         {installPrompt && (
-          <button onClick={handleInstall} className="nav-item w-full font-semibold" style={{color:'#6BA898'}}>
+          <button onClick={handleInstall} className="nav-item w-full font-semibold" style={{color:'#C026D3'}}>
             <Download size={18} /> Install App
           </button>
         )}
@@ -140,10 +140,10 @@ export default function Layout() {
   );
 
   return (
-    <div className="flex min-h-screen" style={{background: '#EDF4F0'}}>
+    <div className="flex min-h-screen" style={{background: '#FAF5FF'}}>
 
       {/* Desktop Sidebar */}
-      <aside className="hidden md:block w-60 shrink-0 sticky top-0 h-screen" style={{background: '#F7FBF9', borderRight: '1px solid rgba(107,168,152,0.18)'}}>
+      <aside className="hidden md:block w-60 shrink-0 sticky top-0 h-screen" style={{background: '#F7FBF9', borderRight: '1px solid rgba(192,38,211,0.18)'}}>
         <SidebarContent />
       </aside>
 
@@ -164,22 +164,22 @@ export default function Layout() {
       <div className="flex-1 flex flex-col min-w-0 max-w-full md:max-w-3xl mx-auto">
 
         {/* Mobile Top Bar */}
-        <header className="md:hidden sticky top-0 z-30 flex items-center justify-between px-4 py-3" style={{background: '#F7FBF9', borderBottom: '1px solid rgba(107,168,152,0.15)'}}>
+        <header className="md:hidden sticky top-0 z-30 flex items-center justify-between px-4 py-3" style={{background: '#F7FBF9', borderBottom: '1px solid rgba(192,38,211,0.15)'}}>
           <button onClick={() => setSidebarOpen(true)} className="p-2 rounded-xl" style={{color: '#5E7A6E'}}>
             <Menu size={22} />
           </button>
-          <h1 className="font-bold text-lg text-aberration" style={{color: '#2D4A3E'}}>Maxe</h1>
+          <h1 className="font-bold text-lg text-aberration" style={{color: '#4A044E'}}>Exambag</h1>
           <div className="flex items-center gap-1">
-            <button onClick={() => setIsTodoOpen(true)} className="p-2 rounded-xl" style={{color: '#6BA898'}}>
+            <button onClick={() => setIsTodoOpen(true)} className="p-2 rounded-xl" style={{color: '#C026D3'}}>
               <CheckSquare size={20} />
             </button>
-            <button onClick={() => setIsCalendarOpen(true)} className="p-2 rounded-xl" style={{color: '#6BA898'}}>
+            <button onClick={() => setIsCalendarOpen(true)} className="p-2 rounded-xl" style={{color: '#C026D3'}}>
               <Calendar size={20} />
             </button>
-            <Link to="/profile" className="w-8 h-8 ml-1 rounded-full overflow-hidden flex items-center justify-center" style={{background: 'rgba(107,168,152,0.15)', border: '1.5px solid rgba(107,168,152,0.3)'}}>
+            <Link to="/profile" className="w-8 h-8 ml-1 rounded-full overflow-hidden flex items-center justify-center" style={{background: 'rgba(192,38,211,0.15)', border: '1.5px solid rgba(192,38,211,0.3)'}}>
               {userProfile?.avatar_url
                 ? <img src={userProfile.avatar_url} alt="Me" className="w-full h-full object-cover" />
-                : <User size={16} style={{color: '#6BA898'}} />}
+                : <User size={16} style={{color: '#C026D3'}} />}
             </Link>
           </div>
         </header>
@@ -188,13 +188,13 @@ export default function Layout() {
         <header className="hidden md:flex items-center justify-end px-6 py-4">
           <Link to="/profile" className="flex items-center gap-3 hover:scale-[1.02] transition-transform">
             <div className="text-right">
-              <p className="text-sm font-bold text-aberration" style={{color: '#2D4A3E'}}>{userProfile?.name || 'My Profile'}</p>
-              <p className="text-xs" style={{color: '#6BA898'}}>{userProfile?.branch || 'Student'}</p>
+              <p className="text-sm font-bold text-aberration" style={{color: '#4A044E'}}>{userProfile?.name || 'My Profile'}</p>
+              <p className="text-xs" style={{color: '#C026D3'}}>{userProfile?.branch || 'Student'}</p>
             </div>
-            <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center" style={{background: 'rgba(107,168,152,0.15)', border: '2px solid rgba(107,168,152,0.3)'}}>
+            <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center" style={{background: 'rgba(192,38,211,0.15)', border: '2px solid rgba(192,38,211,0.3)'}}>
               {userProfile?.avatar_url
                 ? <img src={userProfile.avatar_url} alt="Me" className="w-full h-full object-cover" />
-                : <User size={20} style={{color: '#6BA898'}} />}
+                : <User size={20} style={{color: '#C026D3'}} />}
             </div>
           </Link>
         </header>
@@ -210,7 +210,7 @@ export default function Layout() {
         </main>
 
         {/* Mobile Bottom Nav */}
-        <nav className="md:hidden fixed bottom-0 left-0 right-0 flex justify-around items-center h-[56px] px-2 z-30" style={{background: '#FFFFFF', borderTop: '1px solid rgba(107,168,152,0.15)'}}>
+        <nav className="md:hidden fixed bottom-0 left-0 right-0 flex justify-around items-center h-[56px] px-2 z-30" style={{background: '#FFFFFF', borderTop: '1px solid rgba(192,38,211,0.15)'}}>
           {[
             { to: '/', icon: <LayoutGrid size={22} strokeWidth={2.5} />, label: 'Home' },
             { to: '/explore', icon: <Users size={22} strokeWidth={2.5} />, label: 'Community' },

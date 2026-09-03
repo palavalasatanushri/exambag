@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #E8F2EE; /* Soft pastel mint background */
+  --color-background: #FAF5FF; /* Soft pastel mint background */
   --color-surface: #FFFFFF;    /* Pure white cards */
-  --color-primary: #7BB8A8;    /* Bubbly soft mint teal */
-  --color-accent: #A8D1C7;     /* Lighter mint for hover states */
-  --color-header: #3F5E56;     /* Soft dark green/grey for headers */
-  --color-body: #688C83;       /* Softer green/grey for body text */
+  --color-primary: #C026D3;    /* Bubbly soft mint teal */
+  --color-accent: #E879F9;     /* Lighter mint for hover states */
+  --color-header: #4A044E;     /* Soft dark green/grey for headers */
+  --color-body: #701A75;       /* Softer green/grey for body text */
 }
 
 @layer utilities {
@@ -26,56 +26,56 @@
     text-align: left;
   }
   .nav-item:hover {
-    background: rgba(123,184,168,0.08);
+    background: rgba(192,38,211,0.08);
     color: var(--color-header);
   }
   .nav-item-active {
-    background: rgba(123,184,168,0.15) !important;
+    background: rgba(192,38,211,0.15) !important;
     color: var(--color-primary) !important;
   }
 
   .text-aberration {
-    text-shadow: 0 0 10px rgba(123,184,168,0.4), 1px 0 2px rgba(123,184,168,0.3);
+    text-shadow: 0 0 10px rgba(192,38,211,0.4), 1px 0 2px rgba(192,38,211,0.3);
   }
 
   /* Main app card */
   .card {
     background: #FFFFFF;
-    border: 1px solid rgba(123,184,168,0.15);
+    border: 1px solid rgba(192,38,211,0.15);
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(63,94,86,0.04), 0 2px 8px rgba(63,94,86,0.02);
+    box-shadow: 0 8px 24px rgba(74,4,78,0.04), 0 2px 8px rgba(74,4,78,0.02);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
   .card:hover {
-    box-shadow: 0 12px 32px rgba(123,184,168,0.12);
+    box-shadow: 0 12px 32px rgba(192,38,211,0.12);
     transform: translateY(-1px);
   }
   
   .card-sm {
     background: #FFFFFF;
-    border: 1px solid rgba(123,184,168,0.15);
+    border: 1px solid rgba(192,38,211,0.15);
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(63,94,86,0.03);
+    box-shadow: 0 4px 12px rgba(74,4,78,0.03);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   .card-sm:hover {
-    box-shadow: 0 6px 16px rgba(123,184,168,0.1);
+    box-shadow: 0 6px 16px rgba(192,38,211,0.1);
     transform: translateY(-1px);
   }
   
   /* Soft mint surface */
   .mint {
-    background: #F0F7F4;
-    border: 1px solid rgba(123,184,168,0.2);
+    background: #FDF4FF;
+    border: 1px solid rgba(192,38,211,0.2);
     border-radius: 10px;
   }
   
   /* Input style */
   .app-input {
-    background: #F4FAF8;
-    border: 2px solid rgba(123,184,168,0.2);
+    background: #FDF4FF;
+    border: 2px solid rgba(192,38,211,0.2);
     border-radius: 8px;
-    color: #3F5E56;
+    color: #4A044E;
     width: 100%;
     padding: 10px 14px;
     font-size: 14px;
@@ -84,36 +84,36 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .app-input:focus {
-    border-color: #7BB8A8;
+    border-color: #C026D3;
     background: #FFFFFF;
-    box-shadow: 0 0 0 4px rgba(123,184,168,0.15);
+    box-shadow: 0 0 0 4px rgba(192,38,211,0.15);
   }
   .app-input::placeholder {
-    color: #92B5AA;
+    color: #F0ABFC;
   }
   
   /* Primary button */
   .btn-primary {
-    background: linear-gradient(135deg, #8ED0BF, #7BB8A8);
+    background: linear-gradient(135deg, #D946EF, #C026D3);
     color: #FFFFFF;
     font-weight: 700;
     border-radius: 8px;
     padding: 8px 16px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: none;
-    box-shadow: 0 6px 16px rgba(123,184,168,0.3);
+    box-shadow: 0 6px 16px rgba(192,38,211,0.3);
   }
   .btn-primary:hover {
-    background: linear-gradient(135deg, #9DE0CF, #8ED0BF);
-    box-shadow: 0 8px 24px rgba(123,184,168,0.4);
+    background: linear-gradient(135deg, #E879F9, #D946EF);
+    box-shadow: 0 8px 24px rgba(192,38,211,0.4);
     transform: translateY(-2px);
   }
   .btn-primary:active {
     transform: translateY(1px);
-    box-shadow: 0 4px 12px rgba(123,184,168,0.2);
+    box-shadow: 0 4px 12px rgba(192,38,211,0.2);
   }
   .btn-primary:disabled {
-    background: #C4DFD7;
+    background: #F5D0FE;
     opacity: 0.7;
     transform: none;
     box-shadow: none;
@@ -123,8 +123,8 @@
   /* Outline button */
   .btn-outline {
     background: #FFFFFF;
-    border: 2px solid #A8D1C7;
-    color: #5BA390;
+    border: 2px solid #E879F9;
+    color: #A21CAF;
     font-weight: 700;
     border-radius: 8px;
     padding: 4px 10px;
@@ -132,32 +132,32 @@
     transition: all 0.3s ease;
   }
   .btn-outline:hover {
-    background: #F4FAF8;
-    border-color: #7BB8A8;
-    color: #3F5E56;
-    box-shadow: 0 4px 12px rgba(123,184,168,0.15);
+    background: #FDF4FF;
+    border-color: #C026D3;
+    color: #4A044E;
+    box-shadow: 0 4px 12px rgba(192,38,211,0.15);
   }
   
   /* Tag pill */
   .tag {
-    background: #F4FAF8;
-    color: #688C83;
+    background: #FDF4FF;
+    color: #701A75;
     font-size: 11px;
     font-weight: 700;
     padding: 4px 10px;
     border-radius: 8px;
-    border: 1px solid rgba(123,184,168,0.2);
+    border: 1px solid rgba(192,38,211,0.2);
     transition: all 0.2s;
   }
   .tag-active {
-    background: linear-gradient(135deg, #8ED0BF, #7BB8A8);
+    background: linear-gradient(135deg, #D946EF, #C026D3);
     color: #FFFFFF;
     font-size: 11px;
     font-weight: 700;
     padding: 4px 10px;
     border-radius: 8px;
     border: 1px solid transparent;
-    box-shadow: 0 4px 10px rgba(123,184,168,0.3);
+    box-shadow: 0 4px 10px rgba(192,38,211,0.3);
   }
 }
 

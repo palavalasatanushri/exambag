@@ -184,7 +184,7 @@ const loadFollowStats = async () => {
 
       {/* Header */}
       <div className="card p-4">
-        <h2 className="text-xl font-bold text-aberration" style={{color:'#2D4A3E'}}>Profile</h2>
+        <h2 className="text-xl font-bold text-aberration" style={{color:'#4A044E'}}>Profile</h2>
       </div>
 
       {!isEditing ? (
@@ -193,24 +193,24 @@ const loadFollowStats = async () => {
             <div 
               onClick={() => setShowAvatarPopup(true)}
               className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden flex items-center justify-center shrink-0 border-2 cursor-pointer transition-transform hover:scale-105"
-              style={{borderColor: 'rgba(107,168,152,0.3)', background: 'rgba(107,168,152,0.1)'}}>
+              style={{borderColor: 'rgba(192,38,211,0.3)', background: 'rgba(192,38,211,0.1)'}}>
               {userProfile?.avatar_url
                 ? <img src={userProfile?.avatar_url} alt="avatar" className="w-full h-full object-cover" />
-                : <User size={40} style={{color:'#6BA898'}} />}
+                : <User size={40} style={{color:'#C026D3'}} />}
             </div>
             <div className="flex-1 min-w-0">
-              <h2 className="text-lg md:text-xl font-bold truncate" style={{color:'#2D4A3E'}}>{userProfile?.name || 'Your Name'}</h2>
-              <p className="text-xs font-semibold mt-0.5" style={{color:'#6BA898'}}>@{userProfile?.username || 'username'}</p>
-              <p className="text-xs md:text-sm font-semibold mt-0.5" style={{color:'#6BA898'}}>{userProfile?.branch || 'No branch selected'}</p>
+              <h2 className="text-lg md:text-xl font-bold truncate" style={{color:'#4A044E'}}>{userProfile?.name || 'Your Name'}</h2>
+              <p className="text-xs font-semibold mt-0.5" style={{color:'#C026D3'}}>@{userProfile?.username || 'username'}</p>
+              <p className="text-xs md:text-sm font-semibold mt-0.5" style={{color:'#C026D3'}}>{userProfile?.branch || 'No branch selected'}</p>
               
               <div className="flex gap-4 mt-2">
                 <button onClick={() => openNetwork('followers')} className="flex flex-col items-start hover:opacity-80">
-                  <span className="font-bold text-sm" style={{color:'#2D4A3E'}}>{followerCount}</span>
-                  <span className="text-[10px] uppercase font-bold" style={{color:'#6BA898'}}>Followers</span>
+                  <span className="font-bold text-sm" style={{color:'#4A044E'}}>{followerCount}</span>
+                  <span className="text-[10px] uppercase font-bold" style={{color:'#C026D3'}}>Followers</span>
                 </button>
                 <button onClick={() => openNetwork('following')} className="flex flex-col items-start hover:opacity-80">
-                  <span className="font-bold text-sm" style={{color:'#2D4A3E'}}>{followingCount}</span>
-                  <span className="text-[10px] uppercase font-bold" style={{color:'#6BA898'}}>Following</span>
+                  <span className="font-bold text-sm" style={{color:'#4A044E'}}>{followingCount}</span>
+                  <span className="text-[10px] uppercase font-bold" style={{color:'#C026D3'}}>Following</span>
                 </button>
               </div>
             </div>
@@ -225,27 +225,27 @@ const loadFollowStats = async () => {
           <button 
             onClick={() => setIsEditing(true)}
             className="w-full mt-6 py-2 rounded-xl text-sm font-bold transition-transform active:scale-95"
-            style={{background: '#EAF4EF', color: '#2D4A3E', border: '1px solid rgba(107,168,152,0.2)'}}>
+            style={{background: '#FDF4FF', color: '#4A044E', border: '1px solid rgba(192,38,211,0.2)'}}>
             Edit Profile
           </button>
         </div>
       ) : (
         <div className="card p-5 space-y-5">
           <div className="flex items-center justify-between mb-2">
-            <h3 className="font-bold" style={{color:'#2D4A3E'}}>Edit Profile</h3>
+            <h3 className="font-bold" style={{color:'#4A044E'}}>Edit Profile</h3>
             <button onClick={() => setIsEditing(false)} className="text-xs font-bold" style={{color:'#DC6B6B'}}>Cancel</button>
           </div>
 
           <div className="flex flex-col items-center gap-3">
             <div className="relative">
               <div className="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center"
-                style={{background:'rgba(107,168,152,0.12)', border:'2px solid rgba(107,168,152,0.3)'}}>
+                style={{background:'rgba(192,38,211,0.12)', border:'2px solid rgba(192,38,211,0.3)'}}>
                 {avatarUrl
                   ? <img src={avatarUrl} alt="avatar" className="w-full h-full object-cover" />
-                  : <User size={36} style={{color:'#6BA898'}} />}
+                  : <User size={36} style={{color:'#C026D3'}} />}
               </div>
               <label className="absolute -bottom-1 -right-1 rounded-xl p-2 cursor-pointer shadow"
-                style={{background:'#6BA898', border:'2px solid #FFFFFF'}}>
+                style={{background:'#C026D3', border:'2px solid #FFFFFF'}}>
                 {uploading
                   ? <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
                   : <Camera size={14} style={{color:'#FFFFFF'}} />}
@@ -286,10 +286,10 @@ const loadFollowStats = async () => {
 
       {/* Account */}
       <div className="card p-4 space-y-3">
-        <h3 className="font-bold" style={{color:'#2D4A3E'}}>Account</h3>
+        <h3 className="font-bold" style={{color:'#4A044E'}}>Account</h3>
         <div className="card-sm p-3">
-          <p className="text-xs font-semibold uppercase tracking-wider" style={{color:'#A8C5B8'}}>Email</p>
-          <p className="text-sm font-medium mt-0.5" style={{color:'#2D4A3E'}}>{session?.user?.email}</p>
+          <p className="text-xs font-semibold uppercase tracking-wider" style={{color:'#E879F9'}}>Email</p>
+          <p className="text-sm font-medium mt-0.5" style={{color:'#4A044E'}}>{session?.user?.email}</p>
         </div>
         <button
           onClick={() => supabase.auth.signOut()}
@@ -375,12 +375,12 @@ const loadFollowStats = async () => {
             {userProfile?.avatar_url ? (
               <img src={userProfile?.avatar_url} className="w-full h-full object-cover" alt="avatar" />
             ) : (
-              <div className="w-full h-full flex items-center justify-center" style={{background: 'rgba(107,168,152,0.15)'}}>
-                <User size={120} style={{color:'#6BA898'}} />
+              <div className="w-full h-full flex items-center justify-center" style={{background: 'rgba(192,38,211,0.15)'}}>
+                <User size={120} style={{color:'#C026D3'}} />
               </div>
             )}
             
-            <label className="absolute bottom-6 right-6 w-14 h-14 rounded-full flex items-center justify-center shadow-xl shadow-primary/10 cursor-pointer hover:scale-105 transition-transform text-white border-2 border-white" style={{background:'#6BA898'}}>
+            <label className="absolute bottom-6 right-6 w-14 h-14 rounded-full flex items-center justify-center shadow-xl shadow-primary/10 cursor-pointer hover:scale-105 transition-transform text-white border-2 border-white" style={{background:'#C026D3'}}>
               {uploading ? (
                 <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
               ) : (

@@ -42,15 +42,15 @@ export default function TodoModal({ onClose }) {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4"
       style={{background:'rgba(45,74,62,0.25)', backdropFilter:'blur(6px)'}}>
       <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl flex flex-col"
-        style={{background:'#F7FBF9', maxHeight:'90vh', border:'1px solid rgba(107,168,152,0.2)'}}>
+        style={{background:'#F7FBF9', maxHeight:'90vh', border:'1px solid rgba(192,38,211,0.2)'}}>
 
         {/* Header */}
-        <div className="flex items-center justify-between p-4 shrink-0" style={{background:'#F7FBF9', borderBottom:'1px solid rgba(107,168,152,0.15)'}}>
+        <div className="flex items-center justify-between p-4 shrink-0" style={{background:'#F7FBF9', borderBottom:'1px solid rgba(192,38,211,0.15)'}}>
           <div>
-            <h2 className="font-bold text-lg" style={{color:'#2D4A3E'}}>To-Do List</h2>
+            <h2 className="font-bold text-lg" style={{color:'#4A044E'}}>To-Do List</h2>
             <div className="flex gap-4 text-[10px] font-bold uppercase tracking-wider mt-1">
-              <span style={{color:'#6BA898'}}>{pending.length} pending</span>
-              <span style={{color:'#A8C5B8'}}>{done.length} done</span>
+              <span style={{color:'#C026D3'}}>{pending.length} pending</span>
+              <span style={{color:'#E879F9'}}>{done.length} done</span>
             </div>
           </div>
           <button onClick={onClose} className="btn-outline p-1.5 rounded-xl"><X size={16} /></button>
@@ -67,11 +67,11 @@ export default function TodoModal({ onClose }) {
 
           {pending.length > 0 && (
             <div className="card p-3 space-y-2">
-              <p className="text-[10px] font-bold uppercase tracking-wider mb-2" style={{color:'#6BA898'}}>Pending</p>
+              <p className="text-[10px] font-bold uppercase tracking-wider mb-2" style={{color:'#C026D3'}}>Pending</p>
               {pending.map(todo => (
                 <div key={todo.id} className="card-sm flex items-center gap-3 p-2 group bg-surface">
-                  <button onClick={() => toggle(todo)} style={{color:'#A8C5B8', flexShrink:0}}><Square size={16} /></button>
-                  <p className="flex-1 text-sm" style={{color:'#2D4A3E'}}>{todo.text}</p>
+                  <button onClick={() => toggle(todo)} style={{color:'#E879F9', flexShrink:0}}><Square size={16} /></button>
+                  <p className="flex-1 text-sm" style={{color:'#4A044E'}}>{todo.text}</p>
                   <button onClick={() => del(todo.id)} className="opacity-0 group-hover:opacity-100 transition-opacity" style={{color:'#E57373'}}><Trash2 size={14} /></button>
                 </div>
               ))}
@@ -80,10 +80,10 @@ export default function TodoModal({ onClose }) {
 
           {done.length > 0 && (
             <div className="card p-3 space-y-2">
-              <p className="text-[10px] font-bold uppercase tracking-wider mb-2" style={{color:'#A8C5B8'}}>Completed</p>
+              <p className="text-[10px] font-bold uppercase tracking-wider mb-2" style={{color:'#E879F9'}}>Completed</p>
               {done.map(todo => (
                 <div key={todo.id} className="card-sm flex items-center gap-3 p-2 group bg-surface opacity-60">
-                  <button onClick={() => toggle(todo)} style={{color:'#6BA898', flexShrink:0}}><CheckSquare2 size={16} /></button>
+                  <button onClick={() => toggle(todo)} style={{color:'#C026D3', flexShrink:0}}><CheckSquare2 size={16} /></button>
                   <p className="flex-1 text-sm line-through" style={{color:'#5E7A6E'}}>{todo.text}</p>
                   <button onClick={() => del(todo.id)} className="opacity-0 group-hover:opacity-100 transition-opacity" style={{color:'#E57373'}}><Trash2 size={14} /></button>
                 </div>
@@ -93,8 +93,8 @@ export default function TodoModal({ onClose }) {
 
           {todos.length === 0 && (
             <div className="card p-8 text-center bg-surface">
-              <p className="font-semibold text-sm" style={{color:'#2D4A3E'}}>All clear!</p>
-              <p className="text-xs mt-1" style={{color:'#6BA898'}}>Add your first task above.</p>
+              <p className="font-semibold text-sm" style={{color:'#4A044E'}}>All clear!</p>
+              <p className="text-xs mt-1" style={{color:'#C026D3'}}>Add your first task above.</p>
             </div>
           )}
         </div>
